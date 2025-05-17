@@ -1,0 +1,134 @@
+﻿# Azumatt.BossDirections.Offerings.yml
+# Defines boss offerings using prefab names for items.
+offerings:
+
+  # 1) A simple stone altar to remind you of your beginnings.
+  - location: StartTemple
+    name: Stone Altar
+    addname: false
+    quotes:
+      - "Begin again where the first light rose."
+      - "Every journey starts beneath unyielding rock."
+      - "Let these stones guide you back to your roots."
+      - "In every ending lies the seed of a new start."
+      - "Return now, and let the path reveal itself."
+    items:
+      Stone: 10      # prefab name: Stone
+
+  # 2) Haldor’s shop in the Black Forest—always stocked with curiosities.
+  - location: Vendor_BlackForest
+    name: Haldor
+    addname: true
+    quotes:
+      - "Wanderer, my wares await beneath ancient boughs."
+      - "Coins jingling? Come, let me show you something special."
+      - "Step into my shop—dwarven craftsmanship at its finest."
+      - "You won’t regret this purchase, I guarantee it."
+      - "Masks off, deals on—welcome, friend of the forge."
+    items:
+      Coins: 100     # prefab name: Coins
+
+  # 3) Hildir’s camp—a friendly face with a stock of precious gems.
+  - location: Hildir_camp
+    name: Hildir
+    addname: true
+    quotes:
+      - "Gems for the gallant—what riches do you seek?"
+      - "Welcome, traveler! My jewels sparkle just for you."
+      - "A ruby for courage, an amber for valor—choose wisely."
+      - "Step closer; I have treasures you’ve only dreamed of."
+      - "Bright stones for dark nights—take what you need."
+    items:
+      Ruby: 5   # prefab name: Ruby
+      Amber: 20   # prefab name: Amber
+      AmberPearl: 10   # prefab name: AmberPearl
+
+  # 4) Eikthyr’s realm—a noble offering for the stag king.
+  - location: Eikthyrnir
+    name: Eikthyr
+    addname: true
+    quotes:
+      - "Mortal, you dare summon my grace?"
+      - "Hear my charge upon the winds of these plains."
+      - "Bow or be swept aside by my antlers’ might."
+      - "By hoof and horn, I call you forth."
+      - "Stand tall, challenger, and face the storm."
+    items:
+      TrophyDeer: 1   # prefab name: TrophyDeer
+
+  # 5) The Elder waits in the mist—offer a seed of antiquity.
+  - location: GDKing
+    name: Elder
+    addname: true
+    quotes:
+      - "Roots run deep; what brings you to my ancient grove?"
+      - "One seed sown is a forest reborn."
+      - "Offer the old ways, and listen to the earth’s song."
+      - "Let growth guide you through shadowed woods."
+      - "Whisper your intent to the roots below."
+    items:
+      AncientSeed: 1  # prefab name: AncientSeed
+
+  # 6) Bonemass’s swamp—a grim tribute of bone and decay.
+  - location: Bonemass
+    name: Bonemass
+    addname: true
+    quotes:
+      - "Bones crumble, but my hunger endures."
+      - "Swallow the marsh’s curse—or become it."
+      - "Your flesh will nourish my endless appetite."
+      - "Rise, intruder, and feed my legion of decay."
+      - "I am the rot that never sleeps."
+    items:
+      WitheredBone: 10  # prefab name: WitheredBone
+
+  # 7) Moder’s icy lair—an egg of frozen fire.
+  - location: Dragonqueen
+    name: Moder
+    addname: true
+    quotes:
+      - "Frost bites deeper than steel. Prepare yourself."
+      - "An egg’s chill heralds the queen’s return."
+      - "Ice and flame dance at my whim."
+      - "Feel the bite of winter’s heart."
+      - "No mortal warmth can thaw my resolve."
+    items:
+      DragonEgg: 1     # prefab name: DragonEgg
+
+  # 8) Yagluth’s desecrated throne—a totem of goblin might.
+  - location: GoblinKing
+    name: Yagluth
+    addname: true
+    quotes:
+      - "My totem stands as testament to goblin fury."
+      - "Offer this, and I might spare your bones."
+      - "Shadows hunger for your fear—feed them well."
+      - "Gaze upon my power, worm."
+      - "Your essence will strengthen my reign."
+    items:
+      GoblinTotem: 1   # prefab name: GoblinTotem
+
+  # 9) The Queen of the Hive—her brute guards demand a trophy.
+  - location: Mistlands_DvergrBossEntrance1
+    name: Queen
+    addname: true
+    quotes:
+      - "Hornets swarm for their queen—bring me proof."
+      - "Your bravery will not save you from my hive."
+      - "Steel yourself, for the sting is sweet."
+      - "Betray the swarm, and taste its wrath."
+      - "My children feast on interlopers—join them?"
+    items:
+      TrophySeekerBrute: 1  # prefab name: TrophySeekerBrute
+  
+  # 10) The Queen of the Hive—her brute guards demand a trophy.
+  - location: FaderLocation
+    name: Fader
+    addname: true
+    quotes:
+      - "A father noble and proud, he soared through skies of fire."
+      - "The madness lowered its shroud, and warped his heart's desire."
+    items:
+      BellFragment: 1  # prefab name: BellFragment
+      MorgenHeart: 3  # prefab name: MorgenHeart
+        

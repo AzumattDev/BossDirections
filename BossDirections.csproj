@@ -10,9 +10,9 @@
         <AppDesignerFolder>Properties</AppDesignerFolder>
         <RootNamespace>BossDirections</RootNamespace>
         <AssemblyName>BossDirections</AssemblyName>
-        <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+        <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
         <FileAlignment>512</FileAlignment>
-        <LangVersion>10</LangVersion>
+        <LangVersion>preview</LangVersion>
         <Nullable>enable</Nullable>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -77,6 +77,9 @@
         <Reference Include="BepInEx">
             <HintPath>$(BepInExPath)\core\BepInEx.dll</HintPath>
         </Reference>
+        <Reference Include="ServerSync">
+            <HintPath>Libs\ServerSync.dll</HintPath>
+        </Reference>
         <Reference Include="System" />
         <Reference Include="System.Core" />
         <Reference Include="System.Data" />
@@ -96,15 +99,25 @@
         <Reference Include="UnityEngine.UI">
             <HintPath>$(CorlibPath)\UnityEngine.UI.dll</HintPath>
         </Reference>
+        <Reference Include="YamlDotNet, Version=16.0.0.0, Culture=neutral, PublicKeyToken=ec19458f3c15af5e, processorArchitecture=MSIL">
+          <HintPath>packages\YamlDotNet.16.3.0\lib\netstandard2.0\YamlDotNet.dll</HintPath>
+        </Reference>
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="OfferManager.cs" />
         <Compile Include="Plugin.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="YamlHandler.cs" />
     </ItemGroup>
     <ItemGroup>
         <Content Include=".gitignore" />
         <Content Include="environment.props" />
+        <Content Include="ILRepack.targets" />
+        <Content Include="Libs\ServerSync.dll">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
         <Content Include="LICENSE.txt" />
+        <EmbeddedResource Include="Offerings.yml" />
         <Content Include="README.md" />
         <Content Include="Thunderstore\CHANGELOG.md" />
         <Content Include="Thunderstore\icon.png" />
@@ -113,6 +126,7 @@
     </ItemGroup>
     <ItemGroup>
         <None Include="App.config" />
+        <None Include="packages.config" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -214,6 +228,13 @@ System.IO.File.WriteAllText(ManifestFile, content);
         <Copy SourceFiles="@(NexusPackageFiles)" DestinationFolder="$(PackageDir)" />
         <ZipDirectory SourceDirectory="$(PackageDir)" DestinationFile="Nexus\$(PackageName).zip" Overwrite="true" />
         <RemoveDir Directories="$(PackageDir)" />
+    </Target>
+    <Import Project="packages\ILRepack.Lib.MSBuild.Task.2.0.40\build\ILRepack.Lib.MSBuild.Task.targets" Condition="Exists('packages\ILRepack.Lib.MSBuild.Task.2.0.40\build\ILRepack.Lib.MSBuild.Task.targets')" />
+    <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+      <PropertyGroup>
+        <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105.The missing file is {0}.</ErrorText>
+      </PropertyGroup>
+      <Error Condition="!Exists('packages\ILRepack.Lib.MSBuild.Task.2.0.40\build\ILRepack.Lib.MSBuild.Task.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\ILRepack.Lib.MSBuild.Task.2.0.40\build\ILRepack.Lib.MSBuild.Task.targets'))" />
     </Target>
 
 </Project>
