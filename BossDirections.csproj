@@ -99,6 +99,9 @@
         <Reference Include="UnityEngine.UI">
             <HintPath>$(CorlibPath)\UnityEngine.UI.dll</HintPath>
         </Reference>
+        <Reference Include="Unity.TextMeshPro">
+            <HintPath>$(CorlibPath)\Unity.TextMeshPro.dll</HintPath>
+        </Reference>
         <Reference Include="YamlDotNet, Version=16.0.0.0, Culture=neutral, PublicKeyToken=ec19458f3c15af5e, processorArchitecture=MSIL">
           <HintPath>packages\YamlDotNet.16.3.0\lib\netstandard2.0\YamlDotNet.dll</HintPath>
         </Reference>

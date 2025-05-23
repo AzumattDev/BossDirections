@@ -2,7 +2,7 @@
 
 ## Always points your camera in the direction of the boss location after interacting with a Vegvisir, even when no map mode is not turned on. Does not add a pin for bosses and does not open the map.
 
-`Client or Server mod. Server installation is optional, but when installed on a server, it will sync the Azumatt.BossDirections.Offerings.yml file to all clients.`
+`Client or Server mod. Server installation is optional, but when installed on a server, it will sync the Azumatt.BossDirections.Offerings.yml file to all clients. Azumatt.BossDirections.cfg currently only has client configurations.`
 
 Mod made at the request of Mofker in the Odin Plus Discord.
 

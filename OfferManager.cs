@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using UnityEngine;
+using static BossDirections.BossDirectionsPlugin;
 
 namespace BossDirections;
 
@@ -104,10 +105,18 @@ public static class OfferManager
                         talk = $"[{off.name}] {talk}";
                 }
 
-                player.Message(MessageHud.MessageType.Center, talk);
-
                 ZoneSystem.instance.FindClosestLocation(off.location, firePos, out ZoneSystem.LocationInstance loc);
-                player.SetLookDir(loc.m_position - player.transform.position, 3.5f);
+                string distance = ShowDistanceToBoss.Value.IsOn() ? "\n" + Localization.instance.Localize($"<color=red>{Vector3.Distance(player.transform.position, loc.m_position):F1}m away</color>") : "";
+                player.Message(MessageHud.MessageType.Center, talk + distance);
+
+                if (AddPin.Value.IsOn())
+                {
+                    Game.instance.DiscoverClosestLocation(off.location, firePos, off.name, (int)Minimap.PinType.Boss, false, false);
+                }
+                else
+                {
+                    player.SetLookDir(loc.m_position - player.transform.position, 3.5f);
+                }
 
                 return true;
             }
